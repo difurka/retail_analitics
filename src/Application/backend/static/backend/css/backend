@@ -1,0 +1,358 @@
+body {
+    background: #EBECF4;
+}
+
+header {
+    background: #1c232e;
+    height: 34vh;
+    padding: 2%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 10px #b4b1b1;
+}
+
+header ul {
+    list-style: none;
+}
+
+header li {
+    color: #EBECF4;
+    display: inline;
+    padding: 40px;
+    position: relative;
+    right: 5%;
+}
+
+header ul li:hover,
+header ul a:hover {
+    color: #44EB99;
+    text-decoration: none;
+}
+
+.container input#search {
+    width: 400px;
+    height: 50px;
+    background: #2b303b;
+    border: none;
+    font-size: 14pt;
+    margin: 10%;
+    float: right;
+    color: #EBECF4;
+    border-radius: 10px;
+    position: relative;
+    left: 160%;
+    top: 20%;
+}
+
+.container .icon {
+    position: absolute;
+    top: 40%;
+    margin-left: 100px;
+    z-index: 1;
+    color: #4f5b66;
+}
+
+.container {
+    float: left;
+    position: relative;
+    width: 21%;
+}
+
+.container img {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-left: -45px;
+}
+
+.container .btn {
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    padding: 50px 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.features .btn {
+    color: #EBECF4;
+    padding-left: 35px;
+    position: relative;
+    top: -70px;
+    left: 35%;
+    border: none;
+}
+
+.features .btn:hover {
+    color: #44EB99;
+    text-decoration: none;
+    border: none;
+}
+
+.main_page {
+    background-color: #fff;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-style: solid;
+    border-radius: 5px;
+    border: rgb(254, 254, 254);
+    box-shadow: 0px 0px 15px 10px #e6e4e4;
+    padding: 2%;
+}
+
+.main_page button {
+    margin-top: 10px;
+    color: #000;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: #FFF;
+    background: #44EB99;
+}
+
+.main_page label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+progress {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.circular--portrait {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 60%;
+    box-shadow: 0px 0px 5px 5px #b4b1b1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.circular--portrait img {
+    width: 100%;
+    height: auto;
+}
+
+.aedie_text {
+    text-align: left;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@property --progress-value {
+    syntax: '<integer>';
+    inherits: false;
+    initial-value: 0;
+}
+
+@keyframes html-progress {
+    to {
+        --progress-value: 0;
+    }
+}
+
+@keyframes css-progress {
+    to {
+        --progress-value: 5;
+    }
+}
+
+@keyframes js-progress {
+    to {
+        --progress-value: 1;
+    }
+}
+
+.progress-bar {
+    margin-left: 40%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar::before {
+    counter-reset: percentage var(--progress-value);
+    content: counter(percentage) '%';
+}
+
+.html {
+    background:
+        radial-gradient(closest-side, white 79%, transparent 80% 100%),
+        conic-gradient(rgb(5, 229, 254), rgb(6, 231, 92), calc(var(--progress-value) * 1%), rgb(194, 191, 192) 0);
+    animation: html-progress 2s 1 forwards;
+}
+
+.html::before {
+    animation: html-progress 2s 1 forwards;
+}
+
+.css {
+    background:
+        radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
+        conic-gradient(rgb(5, 229, 254), rgb(6, 231, 92), calc(var(--progress-value) * 1%), rgb(194, 191, 192) 0);
+    animation: css-progress 2s 1 forwards;
+}
+
+.css::before {
+    animation: css-progress 2s 1 forwards;
+}
+
+.js {
+    background:
+        radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
+        conic-gradient(rgb(5, 229, 254), rgb(6, 231, 92), calc(var(--progress-value) * 1%), rgb(194, 191, 192) 0);
+    animation: js-progress 2s 1 forwards;
+}
+
+.js::before {
+    animation: js-progress 2s 1 forwards;
+}
+
+.column {
+    background: #fff;
+    text-align: center;
+    border: rgb(254, 254, 254);
+    border-radius: 5%;
+    border-style: solid;
+    float: left;
+    width: 31.33%;
+    margin-bottom: 5%;
+    margin-top: auto;
+    margin-left: 0.8%;
+    margin-right: 0.8%;
+    box-shadow: 0px 0px 15px 10px #e6e4e4;
+}
+
+.no-gutters {
+    margin-right: 1px;
+    margin-left: 1px;
+
+    >.col,
+    >[class*="col-"] {
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+}
+
+.split {
+    height: 500px;
+    width: 49.5%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    border-color: #44EB99;
+    border-style: solid;
+    border-radius: 10px;
+
+}
+
+.left {
+    float: left;
+    background-color: #fff;
+    position: relative;
+    top: -8vh;
+    border: rgb(254, 254, 254);
+    border-radius: 2%;
+    border-style: solid;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: 0px 0px 15px 10px #e6e4e4;
+}
+
+.right {
+    border: rgb(254, 254, 254);
+    border-radius: 2%;
+    border-style: solid;
+    float: right;
+    background-color: #fff;
+    position: relative;
+    top: -8vh;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: 0px 0px 15px 10px #e6e4e4;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin-left: 1%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+select {
+    background-color: #2b303b;
+    color: #fff;
+    width: 350px;
+    margin-top: 5px;
+    border-color: #000;
+    border-radius: 5px;
+    margin-left: 8%;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+#second .retail_btn {
+    border: #000;
+    font-size: 15px;
+    width: 98%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #44EB99;
+    font-weight: bold;
+    margin: 2px;
+    box-shadow: 0px 0px 1px 1px #e6e4e4;
+}
+
+#second .retail_btn:hover {
+    color: #9544eb;
+    text-decoration: none;
+}
+
+.create-line {
+    width: 98%;
+    border-top: 3px solid #c6c7c7;
+}
