@@ -18,4 +18,4 @@ The project was completed by: Trukhanovich Ilya (aedie - TeamLead, Frontend) - P
 
 Для запуска выполнить в папке src цель make all: используется Docker.
 
-Проект выполнили: труханович Илья (aedie - TeamLead, Frontend) - Python, Django, HTML, CSS, Jinja;  Чернов Георгий (ereva - Devops) - Python, Django, Docker, Nginx, CI/CD; Балакина Екатерина (cshara - Backend) - Python, Django, PostgreSQL, ORM.
+Проект выполнили: Труханович Илья (aedie - TeamLead, Frontend) - Python, Django, HTML, CSS, Jinja;  Чернов Георгий (ereva - Devops) - Python, Django, Docker, Nginx, CI/CD; Балакина Екатерина (cshara - Backend) - Python, Django, PostgreSQL, ORM.
