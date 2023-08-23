@@ -1,6 +1,6 @@
 # EN
 ## Retail Analitycs
-Reretail analytics data upload, its simple analysis, statistics, customer segmentation and creation of personal offers.
+Retail analytics data upload, its simple analysis, statistics, customer segmentation and creation of personal offers.
 The MVC pattern and the Django framework (4.2) are used. The application supports CRUD operations, import/export of tables, calculation of all personal offers and their export to a .csv resolution file via the application web interface.
 Additionally, the functionality for logging user actions and deploying web applications on nginx has been implemented.
 
