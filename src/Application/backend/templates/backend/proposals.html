@@ -1,0 +1,283 @@
+{% extends 'backend/layout.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="features">
+    <a href="{% url 'retail' %}"><button class="btn">Description</button></a>
+    <a href="{% url 'manual' %}"><button class="btn">Manual</button></a>
+    <a href=""><button class="btn">Proposals</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="split left" style="width: 50%; border-radius: 10px;">
+    <section id="second">
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">1. Предложения, ориентированноое на рост среднего чека</h3>
+            <div class="main_page" style="box-shadow: 0px 0px 1px 1px #e6e4e4;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="method_1" style="width: 300px; margin-top: 5%;">Метод расчета</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <select name="method_1" id="method_1"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="first_date_1" style="width: 300px; margin-top: 5%;">Первая дата периода</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="date" name="first_date_1" id="first_date_1"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;">
+                            <script>
+                                document.getElementById('first_date_1').value = new Date().toISOString().slice(0, 10);
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="last_date_1" style="width: 300px; margin-top: 5%;">Последняя дата
+                                периода</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="date" name="last_date_1" id="last_date_1"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;">
+                            <script>
+                                document.getElementById('last_date_1').value = new Date().toISOString().slice(0, 10);
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="coutn_transaction_1" style="width: 300px; margin-top: 5%;">Количество
+                                транзакций</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="coutn_transaction_1" , id="coutn_transaction_1" placeholder="0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{coutn_transaction_1}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="zoom_factor_1" style="width: 300px; margin-top: 5%;">Коэффициент
+                                увеличения</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="zoom_factor_1" , id="zoom_factor_1" placeholder="0.0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185px;"
+                                value={{zoom_factor_1}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="outflow_index_1" style="width: 300px; margin-top: 5%;">Максимальный индекс
+                                оттока</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="outflow_index_1" , id="outflow_index_1" placeholder="0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{outflow_index_1}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_transaction_1" style="width: 300px; margin-top: 5%;">Доля
+                                транзакций</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_transaction_1" , id="share_transaction_1" placeholder="0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{share_transaction_1}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_margin_1" style="width: 300px; margin-top: 5%;">Доля Маржи</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_margin_1" , id="share_margin_1" placeholder="0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{share_margin_1}}>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit" name="proposals_1">Execute</button>
+                    <button class="btn btn-primary" type="submit" name="proposals_csv_1"
+                        style="background-color: blueviolet;">CSV</button>
+                </form>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">2. Предложения, ориентированное на рост частоты визитов</h3>
+            <div class="main_page" style="box-shadow: 0px 0px 1px 1px #e6e4e4;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="first_date_2" style="width: 300px; margin-top: 5%;">Первая дата
+                                периода</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="date" name="first_date_2" id="first_date_2"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;">
+                            <script>
+                                document.getElementById("first_date_2").value = new Date().toISOString().slice(0, 10)
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="last_date_2" style="width: 300px; margin-top: 5%;">Последняя даты
+                                периода</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="date" name="last_date_2" id="last_date_2"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;">
+                            <script>
+                                document.getElementById("last_date_2").value = new Date().toISOString().slice(0, 10)
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="coutn_transaction_2" style="width: 300px; margin-top: 5%;">Число
+                                транзакций</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="coutn_transaction_2" id="coutn_transaction_2" placeholder="0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{coutn_transaction_2}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="outflow_index_2" style="width: 300px; margin-top: 5%;">Индекс оттока</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="outflow_index_2" id="outflow_index_2" placeholder="0.0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185px;"
+                                value={{outflow_index_2}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_transaction_2" style="width: 300px; margin-top: 5%;">Доля
+                                транзакций</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_transaction_2" , id="share_transaction_2" placeholder="0.0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{share_transaction_2}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_margin_2" style="width: 300px; margin-top: 5%;">Доля Маржи</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_margin_2" , id="share_margin_2" placeholder="0.0"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" autocomplete="off"
+                                value={{share_margin_2}}>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success" type="submit" name="proposals_2">Execute</button>
+                    <button class="btn btn-primary" type="submit" name="proposals_csv_2"
+                        style="background-color: blueviolet;">CSV</button>
+                </form>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">3. Предложения, ориентированное на кросс-продажи (рост маржи)</h3>
+            <div class="main_page" style="box-shadow: 0px 0px 1px 1px #e6e4e4;">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="coutn_group_3" style="width: 300px; margin-top: 5%;">Количество групп</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="coutn_group_3" id="coutn_group_3" placeholder="0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185 px;"
+                                value={{coutn_group_3}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="outflow_index_3" style="width: 300px; margin-top: 5%;">Индекс оттока</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="outflow_index_3" id="outflow_index_3" placeholder="0.0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185px;"
+                                value={{outflow_index_3}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="stability_index_3" style="width: 300px; margin-top: 5%;">Индекс
+                                стабильности</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="stability_index_3" id="stability_index_3" placeholder="0.0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185px;"
+                                value={{stability_index_3}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_sku_3" style="width: 300px; margin-top: 5%;">Доля SKU</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_sku_3" id="share_sku_3" placeholder="0.0" autocomplete="off"
+                                style="margin-left: 150px; margin-top: 5%; width: 185px;" value={{share_sku_3}}>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <label for="share_margin_3" style="width: 300px; margin-top: 5%;">Доля маржи (в
+                                процентах)</label>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" name="share_margin_3" id="share_margin_3" placeholder="0.0"
+                                autocomplete="off" style="margin-left: 150px; margin-top: 5%; width: 185px;"
+                                value={{share_margin_3}}>
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit" name="proposals_3">Execute</button>
+                    <button class="btn btn-primary" type="submit" name="proposals_csv_3"
+                        style="background-color: blueviolet;">CSV</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="split right" style="width: 49%; border-radius: 10px;">
+    <div class="row" style="margin-left: 1px; margin-right: 1px;">
+        <div class="main_page">
+            <h4>Result {{name}} view</h4>
+            <table id="customers">
+                <tr>
+                    {% for item in table_head %}
+                    <th>{{item}}</th>
+                    {% endfor %}
+                </tr>
+                {% for items in table %}
+                <tr>
+                    {% for item in items %}
+                    <td>{{item}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

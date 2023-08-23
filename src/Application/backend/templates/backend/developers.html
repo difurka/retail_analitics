@@ -1,0 +1,71 @@
+{% extends 'backend/layout.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="features">
+    <a href="{% url 'about' %}"><button class="btn">Description</button></a>
+    <a href=""><button class="btn">Developers</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin-top: -35px;">
+    <div class="column">
+        <div class="circular--portrait">
+            <img src="{% static 'backend/img/aedie.png' %}">
+        </div>
+        <h4><b>lvl 12</b></h4>
+        <div class="progress-bar-container">
+            <div class="progress-bar js">
+                <progress id="html" min="0" max="100" value="1"></progress>
+            </div>
+        </div>
+        <br>
+        <h4><b>aedie@student.21-school.ru</b></h4>
+        <h5>Core program: O_nsk_12_1021</h5>
+        <div class="aedie_text">
+            {% for item in text_aedie %}
+            <h5>{{item}}</h4>
+                {% endfor %}
+        </div>
+    </div>
+    <div class="column">
+        <div class="circular--portrait">
+            <img src="{% static 'backend/img/cshara.png' %}">
+        </div>
+        <h4><b>lvl 12</b></h4>
+        <div class="progress-bar-container">
+            <div class="progress-bar html">
+                <progress id="html" min="0" max="100" value="0"></progress>
+            </div>
+        </div>
+        <br>
+        <h4><b>cshara@student.21-school.ru</b></h4>
+        <h5>Core program: O_nsk_12_1021</h5>
+        <div class="aedie_text">
+            {% for item in text_cshara %}
+            <h5>{{item}}</h4>
+                {% endfor %}
+        </div>
+    </div>
+    <div class="column">
+        <div class="circular--portrait">
+            <img src="{% static 'backend/img/ereva.png' %}">
+        </div>
+        <h4><b>lvl 12</b></h4>
+        <div class="progress-bar-container">
+            <div class="progress-bar css">
+                <progress id="html" min="0" max="100" value="5"></progress>
+            </div>
+        </div>
+        <br>
+        <h4><b>ereva@student.21-school.ru</b></h4>
+        <h5>Core program: O_nsk_12_1021</h5>
+        <div class="aedie_text">
+            {% for item in text_ereva %}
+            <h5>{{item}}</h4>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,264 @@
+{% extends 'backend/layout.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="features">
+    <a href="{% url 'data' %}"><button class="btn">Description</button></a>
+    <a href=""><button class="btn">CRUD</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="split left" style="width: 50%; border-radius: 10px; ">
+    <section id="second">
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Cards</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_cards' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Checks</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_checks' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Date Reports</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_date_reports' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Goods</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Groups Of Goods</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_groups_of_goods' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Personal Data</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_personal_data' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Stores</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_stores' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-info" style="box-shadow: 0px 0px 1px 1px #e6e4e4; background-color: blueviolet;">
+            <h3 style="color: black;">Transactions</h3>
+            <div class="row no-gutters">
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_view_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">View</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_create_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">Create</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_update_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">Update</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_delete_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">Delete</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_import_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">Import</button></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'crud_export_transactions' %}"><button type="button"
+                            class="btn btn-block retail_btn">Export</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="split right" style="width: 49%; border-radius: 10px;">
+    <div class="row">
+        <div class="main_page" style="width: 90%; height: 90%; margin-left: 5%;">
+            <h4>Create {{name}} form</h4>
+            <br>
+            <form method="post">
+                {% csrf_token %}
+                {% for item in forms %}
+                {{item}}<br>
+                {% endfor %}
+                <button class="btn btn-success" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

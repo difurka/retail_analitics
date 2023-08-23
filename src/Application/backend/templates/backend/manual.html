@@ -1,0 +1,94 @@
+{% extends 'backend/layout.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="features">
+    <a href="{% url 'retail' %}"><button class="btn">Description</button></a>
+    <a href=""> <button class="btn">Manual</button></a>
+    <a href="{% url 'proposals' %}"><button class="btn">Proposals</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="main_page" style="margin-top: -35px;">
+    <h4>Функция, определяющая предложения, ориентированные на рост среднего чека.</h4>
+    <div class="create-line"></div>
+    <p><b>Параметры функции:</b></p>
+    <ol>
+        <li>метод расчета среднего чека; (1 - за период, 2 - за количество)</li>
+        <li>первая и последняя даты периода; (для 1 метода)</li>
+        <li>количество транзакций; (для 2 метода)</li>
+        <li>максимальный индекс оттока;</li>
+        <li>максимальная доля транзакций со скидкой;</li>
+        <li>допустимая доля маржи; (в процентах)</li>
+    </ol>
+    <p><b>Вывод функции:</b></p>
+    <table id="customers">
+        <tr>
+            {% for item in table_head_1 %}
+            <th>{{item}}</th>
+            {% endfor %}
+        </tr>
+        {% for items in table_1 %}
+        <tr>
+            {% for item in items %}
+            <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h4>Функция, определяющая предложения, ориентированные на рост частоты визитов</h4>
+    <div class="create-line"></div>
+    <p><b>Параметры функции:</b></p>
+    <ol>
+        <li>первая и последняя даты периода</li>
+        <li>добавляемое число транзакций</li>
+        <li>максимальный индекс оттока</li>
+        <li>максимальная доля транзакций со скидкой</li>
+        <li>допустимая доля маржи (в процентах)</li>
+    </ol>
+    <p><b>Вывод функции:</b></p>
+    <table id="customers">
+        <tr>
+            {% for item in table_head_2 %}
+            <th>{{item}}</th>
+            {% endfor %}
+        </tr>
+        {% for items in table_2 %}
+        <tr>
+            {% for item in items %}
+            <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <h4>Функция, определяющуаяпредложения, ориентированные на кросс-продажи (рост маржи)</h4>
+    <div class="create-line"></div>
+    <p><b>Параметры функции:</b></p>
+    <ol>
+        <li>количество групп</li>
+        <li>максимальный индекс оттока</li>
+        <li>максимальный индекс стабильности потребления</li>
+        <li>максимальная доля SKU</li>
+        <li>допустимая доля маржи (в процентах)</li>
+    </ol>
+
+    <p><b>Вывод функции:</b></p>
+    <table id="customers">
+        <tr>
+            {% for item in table_head_3 %}
+            <th>{{item}}</th>
+            {% endfor %}
+        </tr>
+        {% for items in table_3 %}
+        <tr>
+            {% for item in items %}
+            <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'backend/layout.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="features">
+    <a href=""><button class="btn">Description</button></a>
+    <a href="{% url 'developers' %}"><button class="btn">Developers</button></a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="main_page" style="margin-top: -35px;">
+    <h2>Общая информация о разделе &quot;About&quot;</h2>
+    <br>
+    <p>В данном разделе Вы познакомитесь с разработчиком данного проекта.</p>
+    <p>Я постарался не раскрывать большой объем персональных данных, информация которая приведена в
+        данном разделе имеется в открытом доступе среди учащихся Школы 21.</p>
+</div>
+{% endblock %}
