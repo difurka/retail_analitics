@@ -1,0 +1,4 @@
+Name: Georgy Chernov
+tg: @Graien
+Position: Devops
+Stack: Python, Django, Docker, Nginx, CI/CD

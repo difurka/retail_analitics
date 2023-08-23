@@ -1,0 +1,4 @@
+Name: Ekaterina Balakina
+tg: @difurka
+Position: Backend
+Stack: Python, Django, PostgreSQL, ORM

@@ -1,0 +1,4 @@
+Name: Ilya Trukhanovich
+tg: @iitruha89
+Position: TeamLead, Frontend
+Stack: Python, Django, HTML, CSS, Jinja
